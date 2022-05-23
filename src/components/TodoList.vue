@@ -32,11 +32,11 @@ export default {
 
 <template>
     <button @click="showNewTodoInput">Add new element</button>
-    <ul>
+    <ul class="list-none pl-0">
         <form v-if="isAddingNewTodo" @submit.prevent="addTodo">
             <input  type="text" v-model="newTodo" placeholder="Add a new item here">
         </form>
-        <li v-for="todo in todos" v-bind:key="todo.id">
+        <li v-for="todo in todos" v-bind:key="todo.id" class="hover:cursor-pointer">
             <span v-bind:class="{ done: todo.done }" v-on:click="toggleDone(todo)">
                 {{ todo.content }}
             </span>
@@ -46,15 +46,8 @@ export default {
 </template>
 
 <style>
-ul {
-    list-style: none;
-    padding-left: 0;
-}
 .done {
     text-decoration: line-through;
     text-decoration-color: #3c9336;
-}
-li:hover {
-    cursor: pointer;
 }
 </style>
