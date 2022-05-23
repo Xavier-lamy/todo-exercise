@@ -31,23 +31,20 @@ export default {
 </script>
 
 <template>
-    <button @click="showNewTodoInput">Add new element</button>
-    <ul class="list-none pl-0">
+    <button @click="showNewTodoInput" class="btn">Add new element</button>
+    <ul class=" max-w-xs w-full " role="list">
         <form v-if="isAddingNewTodo" @submit.prevent="addTodo">
-            <input  type="text" v-model="newTodo" placeholder="Add a new item here">
+            <input  type="text" v-model="newTodo" placeholder="Add a new item here" class="border-none focus:outline-none my-3 p-2 w-full">
         </form>
-        <li v-for="todo in todos" v-bind:key="todo.id" class="hover:cursor-pointer">
+        <li v-for="todo in todos" v-bind:key="todo.id" class="flex items-center justify-between hover:cursor-pointer">
             <span v-bind:class="{ done: todo.done }" v-on:click="toggleDone(todo)">
                 {{ todo.content }}
             </span>
-            <button v-on:click="removeTodo(todo)">X</button>
+            <button v-on:click="removeTodo(todo)" class="m-2 w-6 h-6 align-middle bg-red-800 text-white rounded-full">X</button>
         </li>
     </ul>
 </template>
 
 <style>
-.done {
-    text-decoration: line-through;
-    text-decoration-color: #3c9336;
-}
+
 </style>

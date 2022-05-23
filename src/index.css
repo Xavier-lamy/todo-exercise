@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    body {
+        @apply text-base bg-green-secondary;
+    }
+    h1 {
+        @apply text-5xl;
+    }
+    h2 {
+        @apply text-4xl;
+    }
+    h3 {
+        @apply text-3xl;
+    }
+    h4 {
+        @apply text-2xl;
+    }
+    h5 {
+        @apply text-xl;
+    }
+    h6 {
+        @apply text-lg;
+    }
+}
+
+@layer components {
+    .done {
+        @apply line-through;
+        text-decoration-color: theme('colors.green.tertiary');
+        opacity: 0.5;
+    }
+    .btn {
+        @apply bg-green-tertiary text-white 
+        hover:bg-white hover:text-green-tertiary
+        px-5 py-2 border border-green-tertiary;
+    }
+}

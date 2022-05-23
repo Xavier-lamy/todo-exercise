@@ -11,8 +11,12 @@ export default {
 </script>
 
 <template>
-  <h2>{{ title }}</h2>
-  <TodoList/>
+    <main class="container mx-auto my-5">
+        <h2 class="text-center font-bold text-green-primary">{{ title }}</h2>
+        <div class="my-5 flex flex-col items-center">
+            <TodoList/>
+        </div>
+    </main>
 </template>
 
 <style>
