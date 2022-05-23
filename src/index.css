@@ -36,5 +36,6 @@
         @apply bg-green-tertiary text-white 
         hover:bg-white hover:text-green-tertiary
         px-5 py-2 border border-green-tertiary;
+        transition: all 0.3s ease; 
     }
 }
